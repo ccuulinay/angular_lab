@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div ng-app="BotSkeApp" ng-controller="BotSkeCtrl" class="card" style="max-width: 400px;">
+        <header class="container">
+            <h3>Mirror Talk</h3>
+        </header>
+        <div>
+            <p>You just said: {{mirrormsg}}</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10">
+                    <input placeholder="Send message here." ng-model="msg" class="input">
+                </div>
+                <div class="col-sm-2">
+                    <button ng-click="sendMsg()" class="btn green">Send</button>
+                </div>
+            </div>
+            <p class="text-red">{{errortext}}</p>
+        </div>
+    </div>
+</body>
+</html>
