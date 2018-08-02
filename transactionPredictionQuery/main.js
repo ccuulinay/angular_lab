@@ -5,8 +5,8 @@ app.controller("myCtrl", function($scope, $http, transformRequestAsFormPost){
         $scope.errortext = "";
         $scope.result = "";
 
-        parent_url = "";
-        user_id = $scope.user_id;
+        parent_url = "http://vps163246.vps.ovh.ca:6008/get?";
+        user_id = "cid=" + $scope.user_id;
         q_url = parent_url + user_id;
 
 
@@ -15,15 +15,15 @@ app.controller("myCtrl", function($scope, $http, transformRequestAsFormPost){
         $http({
             //method:"post",
             method:"get",
-            url:"http://free.currencyconverterapi.com/api/v6/convert?q=CNY_USD&compact=y"
-            //url:q_url,
+            //url:"http://free.currencyconverterapi.com/api/v6/convert?q=CNY_USD&compact=y"
+            url:q_url,
             //transformRequest: transformRequestAsFormPost,
             //data: {messageText: $scope.msg},
             //headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         })
             .then(function successCallback(response) {
                 //$scope.msg = "";
-                $scope.result = response.data.CNY_USD.val;
+                $scope.result = response.data;
                 console.log(response);
             }, function errorCallback(response){
                 $scope.result = "Error";
@@ -35,7 +35,8 @@ app.controller("myCtrl", function($scope, $http, transformRequestAsFormPost){
 
 });
 
-// I provide a request-transformation method that is used to prepare the outgoing
+// I provide a request-transformation method thatGHFFHLFDHLFSHSYEOEFJAFFHZXFG34TEFL.ZV
+//  VNCCis used to prepare the outgoing
 // request as a FORM post instead of a JSON packet.
 app.factory(
     "transformRequestAsFormPost",
